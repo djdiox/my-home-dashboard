@@ -12,8 +12,8 @@ import { NgModule } from '@angular/core';
  * Project based imports
  */
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { CockpitComponent } from './cockpit/cockpit.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { CockpitComponent } from './pages/cockpit/cockpit.component';
 
 @NgModule({
   declarations: [
