@@ -19,6 +19,7 @@
             padding: 0.2em;
         }
         ul {
+            padding-left: 0;
             list-style: none;
         }
         ol {
@@ -33,9 +34,6 @@
             position: absolute;
             right: 0px;
         }
-        .date-span{
-
-        }
         .date-time-span{
             margin-left:10px;
         }
@@ -43,7 +41,6 @@
     .work-time-wrapper,
     .tasks-wrapper {
         ul {
-            padding-left: 0;
             max-width: 250px;
             display: inline-flex;
             flex-wrap: wrap;

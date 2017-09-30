@@ -13,7 +13,10 @@
   <div class="tasks-wrapper cockpit-container">
     <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
     <h2>Tasks</h2>
-    <input type="date" placeholder="Filter Work Time">
+    <label for="tasksStartFilter">Start</label>
+    <input #tasksStartFilter type="datetime-local" placeholder="Filter date start">
+    <label for="tasksEndFilter">End</label>
+    <input #tasksEndFilter type="datetime-local" placeholder="Filter date end">
     <ul>
       <li>
         <span class="date-span">25.09.2017</span> <span class="time-span">7.30</span>
