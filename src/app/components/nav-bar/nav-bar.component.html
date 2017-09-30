@@ -1,18 +1,24 @@
 <nav>
     <ul class="nav">
         <li class="nav-item">
-            <a><i class="fa fa-free-code-camp" aria-hidden="true">
-                </i>
-            </a>
+            <a><i class="fa fa-free-code-camp" aria-hidden="true"></i></a>
         </li>
-        <li class="nav-item">
-            <a>Cockpit</a>
+        <li class="nav-item dropdown">
+            <a a href="javascript:void(0)" class="dropbtn">Overview</a>
+            <ul class="dropdown-content">
+                <li>
+                    <a routerLink="home">Cockpit</a>
+                </li>
+                <li>
+                    <a routerLink="projects">Projects</a>
+                </li>
+            </ul>
         </li>
-        <li class="nav-item">
-            <a href="">Projects</a>
-        </li>
-        <li class="nav-item">
-            <a href="">Sound Explorer</a>
+        <li class="nav-item dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Tools</a>
+            <ul class="dropdown-content">
+                <li><a routerLink="sounds">Sound Explorer</a></li>
+            </ul>
         </li>
     </ul>
 </nav>

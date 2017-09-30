@@ -16,10 +16,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CockpitComponent } from './pages/cockpit/cockpit.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { SoundExplorerComponent } from './pages/sound-explorer/sound-explorer.component';
 const appRoutes: Routes = [
   {
     path: 'home',
     component: CockpitComponent
+  },
+  {
+    path: 'projects',
+    component: ProjectsComponent
+  },  
+  {
+    path: 'sounds',
+    component: SoundExplorerComponent
   },
   { path: '',
     redirectTo: '/home',
@@ -32,12 +42,14 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavBarComponent,
-    CockpitComponent
+    CockpitComponent,
+    ProjectsComponent,
+    SoundExplorerComponent
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: true, useHash:true } // <-- debugging purposes only
     ),
     BrowserModule
   ],
