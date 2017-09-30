@@ -3,9 +3,9 @@
         <li class="nav-item">
             <a><i class="fa fa-free-code-camp" aria-hidden="true"></i></a>
         </li>
-        <li class="nav-item dropdown" [ngClass]="{'active': currentGroup === 'overview'}">
+        <li class="nav-item dropdown" [ngClass]="{'active': currentGroup === 'overview'}" (click)="activeMenu = 'overview'">
             <a a href="javascript:void(0)" class="dropbtn">Overview</a>
-            <ul class="dropdown-content">
+            <ul class="dropdown-content" [ngStyle]="{'display': activeMenu === 'overview' ? 'block' : none }">
                 <li>
                     <a routerLink="home" routerLinkActive="active">Cockpit</a>
                 </li>
