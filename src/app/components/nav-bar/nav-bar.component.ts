@@ -11,11 +11,14 @@ import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
 export class NavBarComponent implements OnInit {
   currentGroup: string;
   activeMenu: string;
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private _eref: ElementRef) {
+  constructor(private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private _eref: ElementRef) {
   }
 
   ngOnInit() {
     this.router.events.subscribe((event) => {
+      this.activeMenu = '';
       switch (this.router.url) {
         case '/home':
         case '/':
@@ -28,11 +31,11 @@ export class NavBarComponent implements OnInit {
           break;
       }
     });
-  }  
+  }
   onClick(event) {
     if (!this._eref.nativeElement.contains(event.target)) // or some similar check
       this.activeMenu = '';
-   }
- 
+  }
+
 
 }

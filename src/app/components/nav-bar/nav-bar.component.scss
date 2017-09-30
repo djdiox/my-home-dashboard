@@ -19,14 +19,13 @@ ul.nav {
         }
     }
 
-
     .dropdown-content {
         display: none;
         position: absolute;
         list-style-type: none;
         background-color: #111;
         color: white;
-        min-width: 125px;
+        min-width: 82px;
         border-radius: 6px;
         padding: 0;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -47,6 +46,7 @@ ul.nav {
     
     li:hover,
     .active {
+        border-radius: 6px;
         background-color: #3e8e41;
     }
 }
