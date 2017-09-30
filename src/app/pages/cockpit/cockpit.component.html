@@ -1,5 +1,6 @@
 <div class="cockpit-wrapper">
   <div class="todos-wrapper cockpit-container">
+    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
     <h2>Todos</h2>
     <input type="text" placeholder="Filter Todo">
     <ol>
@@ -10,6 +11,7 @@
     </ol>
   </div>
   <div class="work-time-wrapper cockpit-container">
+    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
     <h2>Work Times</h2>
     <input type="date" placeholder="Filter Work Time">
     <ul>
@@ -32,6 +34,7 @@
     </ul>
   </div>
   <div class="top-tracks cockpit-container">
+    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
     <h2>Top Tracks</h2>
     <input type="datetime-local" placeholder="Get by Date">
     <button>Filter</button>
@@ -43,6 +46,9 @@
     </ol>
   </div>
   <div class="top-offers cockpit-container">
+    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true" *ngIf="!editOrderNumber" (click)="editOrderNumber = true;"></i>
+    <input type="number" #orderNumber *ngIf="editOrderNumber">
+    <button *ngIf="editOrderNumber" (click)="editOrderNumber = false;">Save</button>
     <h2>Top Offers</h2>
     <ul>
       <li><a href="">iPhone X<span class="date-time-span">25.09.2017 12.30</span></a></li>

@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 /**
  * Additional Library Imports
  */
+// import { DragulaModule } from 'ng2-dragula'; //TO BE DONE
 
 /**
  * Project based imports
