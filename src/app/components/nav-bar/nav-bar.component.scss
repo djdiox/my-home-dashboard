@@ -45,7 +45,8 @@ ul.nav {
         display: block;
     }
     
-    li:hover {
+    li:hover,
+    .active {
         background-color: #3e8e41;
     }
 }

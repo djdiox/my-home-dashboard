@@ -3,18 +3,18 @@
         <li class="nav-item">
             <a><i class="fa fa-free-code-camp" aria-hidden="true"></i></a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" [ngClass]="{'active': currentGroup === 'overview'}">
             <a a href="javascript:void(0)" class="dropbtn">Overview</a>
             <ul class="dropdown-content">
                 <li>
-                    <a routerLink="home">Cockpit</a>
+                    <a routerLink="home" routerLinkActive="active">Cockpit</a>
                 </li>
                 <li>
-                    <a routerLink="projects">Projects</a>
+                    <a routerLink="projects" routerLinkActive="active">Projects</a>
                 </li>
             </ul>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" [ngClass]="{'active': currentGroup === 'tools'}">
             <a href="javascript:void(0)" class="dropbtn">Tools</a>
             <ul class="dropdown-content">
                 <li><a routerLink="sounds">Sound Explorer</a></li>
