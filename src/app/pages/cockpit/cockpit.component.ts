@@ -9,6 +9,7 @@ export class CockpitComponent implements OnInit {
 
   public currentSort = [
     'todos',
+    'tasks',
     'work-times',
     'top-tracks',
     'top-offers'

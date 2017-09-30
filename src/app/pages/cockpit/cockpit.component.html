@@ -10,34 +10,73 @@
       <li>Todo</li>
     </ol>
   </div>
-  <div class="work-time-wrapper cockpit-container">
+  <div class="tasks-wrapper cockpit-container">
     <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
-    <h2>Work Times</h2>
+    <h2>Tasks</h2>
     <input type="date" placeholder="Filter Work Time">
     <ul>
       <li>
-        <span class="date-span">25.09.2017</span> <span class="time-span">7.30 - 16.30</span>
+        <span class="date-span">25.09.2017</span> <span class="time-span">7.30</span>
+        <br>
+        <span>Task 1</span>
       </li>
       <li>
-        <span class="date-span">26.09.2017</span> <span class="time-span">7.30 - 16.30</span>
+        <span class="date-span">26.09.2017</span> <span class="time-span">12.30</span>
+        <br>
+        <span>Task 2</span>
       </li>
       <li>
-        <span class="date-span">27.09.2017</span> <span class="time-span">7.30 - 16.30</span>
+        <span class="date-span">26.09.2017</span> <span class="time-to-time-span">12.30 - 13.30</span>
+        <br>
+        <span>Task 3</span>
       </li>
       <li>
-        <span class="date-span">28.09.2017</span> <span class="time-span">7.30 - 16.30</span>
+        <span class="date-span">28.09.2017</span> <span class="time-span">7.30</span>
+        <br>
+        <span>Task 4</span>
       </li>
       <li>
         <span class="date-span">29.09.2017</span> <span class="time-span">7.30 - 16.30</span>
+        <br>
+        <span>Task 5</span>
       </li>
-      <li><span class="date-span">30.09.2017</span> <span class="time-span">7.30 - 16.30</span></li>
+      <li><span class="date-span">30.09.2017</span> <span class="time-span">7.30 - 16.30</span>
+        <br>
+        <span>Task 6</span>
+      </li>
+    </ul>
+  </div>
+  <div class="work-time-wrapper cockpit-container">
+    <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+    <h2>Work Times</h2>
+    <label for="workTimeStartFilter">Start</label>
+    <input #workTimeStartFilter type="datetime-local" placeholder="Filter date start">
+    <label for="workTimeEndFilter">End</label>
+    <input #workTimeEndFilter type="datetime-local" placeholder="Filter date end">
+    <ul>
+      <li>
+        <span class="date-span">25.09.2017</span> <span class="time-to-time-span">7.30 - 16.30</span>
+      </li>
+      <li>
+        <span class="date-span">26.09.2017</span> <span class="time-to-time-span">7.30 - 16.30</span>
+      </li>
+      <li>
+        <span class="date-span">27.09.2017</span> <span class="time-to-time-span">7.30 - 16.30</span>
+      </li>
+      <li>
+        <span class="date-span">28.09.2017</span> <span class="time-to-time-span">7.30 - 16.30</span>
+      </li>
+      <li>
+        <span class="date-span">29.09.2017</span> <span class="time-to-time-span">7.30 - 16.30</span>
+      </li>
+      <li><span class="date-span">30.09.2017</span> <span class="time-to-time-span">7.30 - 16.30</span></li>
     </ul>
   </div>
   <div class="top-tracks cockpit-container">
     <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
     <h2>Top Tracks</h2>
-    <input type="datetime-local" placeholder="Get by Date">
-    <button>Filter</button>
+    <label for="topTracksFilter">Day</label>
+    <input #topTracksFilter type="datetime-local" />
     <ol>
       <li><a href="">Marshmello - Silence</a></li>
       <li><a href="">Bakermat - Don't want you back</a></li>
@@ -47,9 +86,12 @@
   </div>
   <div class="top-offers cockpit-container">
     <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true" *ngIf="!editOrderNumber" (click)="editOrderNumber = true;"></i>
-    <input type="number" #orderNumber *ngIf="editOrderNumber">
+    <input type="number" #orderNumber *ngIf="editOrderNumber" />
     <button *ngIf="editOrderNumber" (click)="editOrderNumber = false;">Save</button>
     <h2>Top Offers</h2>
+
+    <label for="offerDateFiler">Day</label>
+    <input #offerDateFiler type="datetime-local" />
     <ul>
       <li><a href="">iPhone X<span class="date-time-span">25.09.2017 12.30</span></a></li>
       <li><a href="">Ein Eis<span class="date-time-span">27.09.2017 13.50</span></a></li>
