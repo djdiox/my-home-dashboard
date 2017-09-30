@@ -4,19 +4,20 @@ ul.nav {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-
     li.nav-item {
         float: left;
     }
-    
     li.nav-item a {
         display: block;
         color: white;
         text-align: center;
         padding: 14px 16px;
-        text-decoration: none;
+        text-decoration: none; // padding: 1em 0.5em;
+        @media only screen and (max-width: 640px), only screen and (max-width: 667px), only screen and (max-width: 480px) {
+            font-size: 0.9em;
+            padding: 0.7em;
+        }
     }
-    
     /* Change the link color to #111 (black) on hover */
     li.nav-item a:hover {
         background-color: #111;
