@@ -2,12 +2,9 @@
   <div class="todos-wrapper cockpit-container">
     <i class="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
     <h2>Todos</h2>
-    <input type="text" placeholder="Filter Todo">
+    <input type="text" placeholder="Filter Todo" [(ngModel)]="todoFilter">
     <ol>
-      <li *ngFor="let todo of todos | async">Todo</li>
-      <li>Todo</li>
-      <li>Todo</li>
-      <li>Todo</li>
+      <li *ngFor="let todo of todosList | async | filter : {name:todoFilter}">{{todo.name}}</li>
     </ol>
   </div>
   <div class="tasks-wrapper cockpit-container">
@@ -60,7 +57,7 @@
       <li>
         <span class="date-span">25.09.2017</span> <span class="time-to-time-span">7.30 - 16.30</span>
       </li>
-      <li>
+      <li> [(ngModel)]="todoFilter"
         <span class="date-span">26.09.2017</span> <span class="time-to-time-span">7.30 - 16.30</span>
       </li>
       <li>

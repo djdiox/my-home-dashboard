@@ -16,7 +16,8 @@ export class CockpitComponent implements OnInit {
     'work-times',
     'top-tracks',
     'top-offers'
-  ]
+  ];
+  public currentTasksFilter:string;
   constructor(private todosService: TodosService) { }
 
   ngOnInit() {

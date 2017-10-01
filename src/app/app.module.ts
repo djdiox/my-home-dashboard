@@ -35,6 +35,7 @@ import { TodosComponent } from './pages/todos/todos.component';
  * Services
  */
 import { TodosService } from './services/todos.service';
+import { FilterPipe } from './pipes/filter.pipe';
 
 const appRoutes: Routes = [
   {
@@ -68,7 +69,8 @@ const appRoutes: Routes = [
     CockpitComponent,
     ProjectsComponent,
     SoundExplorerComponent,
-    TodosComponent
+    TodosComponent,
+    FilterPipe
   ],
   imports: [
     RouterModule.forRoot(
