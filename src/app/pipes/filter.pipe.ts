@@ -5,15 +5,22 @@ import * as _ from 'lodash';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: any[], filter?: {}): any {
-    if (typeof value === 'undefined' || typeof filter === 'undefined' || value == null) return value;
-    const filters = Object.keys(filter);
-    return _.filter(value, (current) => {
-      return _.reduce(current, (result, value, prop) => {
-        if(filters.indexOf(prop) < 0 || typeof filter[prop] === 'undefined') return result;
-        result = value.toString().indexOf(filter[prop]) > -1;
-        return result;
-      }, true);
+  /**
+   * Gets Called when the pipe is being called.
+   * 
+   * @param {object[]} unfiltered An Object Array of Values
+   * @param {{}} [filter] The Filter Object
+   * @returns {object[]} the Array of filtered Values 
+   * @memberof FilterPipe
+   */
+  transform(unfiltered: object[], filter?: {}): any {
+    if (typeof unfiltered === 'undefined' || typeof filter === 'undefined' || unfiltered == null) return unfiltered;
+    const filterProps = Object.keys(filter);
+    return _.filter(unfiltered, (unfilteredElement) => {
+      return _.reduce(unfilteredElement, (isVisible, objValue, currentProp) =>
+        filterProps.indexOf(currentProp) < 0 || typeof filter[currentProp] === 'undefined' ?
+          isVisible : objValue.toString().indexOf(filter[currentProp]) > -1
+        , true);
     })
   }
 
