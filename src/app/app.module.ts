@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 /**
  * Angular Core Component Imports
  */
@@ -18,6 +19,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { CockpitComponent } from './pages/cockpit/cockpit.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { SoundExplorerComponent } from './pages/sound-explorer/sound-explorer.component';
+import { TodosComponent } from './pages/todos/todos.component';
 const appRoutes: Routes = [
   {
     path: 'home',
@@ -27,6 +29,10 @@ const appRoutes: Routes = [
     path: 'projects',
     component: ProjectsComponent
   },  
+  {
+    path: 'todos',
+    component: ProjectsComponent
+  },
   {
     path: 'sounds',
     component: SoundExplorerComponent
@@ -44,12 +50,13 @@ const appRoutes: Routes = [
     NavBarComponent,
     CockpitComponent,
     ProjectsComponent,
-    SoundExplorerComponent
+    SoundExplorerComponent,
+    TodosComponent
   ],
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { useHash:true } // enableTracing: true, <-- debugging purposes only
+      { useHash:true } //, enableTracing: true <-- debugging purposes only
     ),
     BrowserModule
   ],
