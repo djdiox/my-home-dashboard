@@ -1,4 +1,6 @@
+import { TodosService, Todo } from './../../services/todos.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-cockpit',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CockpitComponent implements OnInit {
 
+  public todosList: Observable<Todo[]>;
   public currentSort = [
     'todos',
     'tasks',
@@ -14,9 +17,15 @@ export class CockpitComponent implements OnInit {
     'top-tracks',
     'top-offers'
   ]
-  constructor() { }
+  constructor(private todosService: TodosService) { }
 
   ngOnInit() {
+
+    this.todosList = this.todosService
+      .todos;
+
+    this.todosService
+      .fetchTodos();
   }
 
 }

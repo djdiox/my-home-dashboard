@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs/Observable';
+import { TodosService, Todo } from './../../services/todos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosComponent implements OnInit {
 
-  constructor() { }
+  public todos:Todo[];
+  
+  public currentTodo = <Todo>{name:''};
+
+  constructor(private todosService: TodosService) { }
 
   ngOnInit() {
+    this.todosService
+    .todos
+    .subscribe((todos) => {
+      this.todos = todos;
+    });
+    this.todosService
+    .fetchTodos();
   }
 
+  saveTodo(name:string){
+    this.todosService
+    .saveTodo(<Todo>{name})
+    .subscribe(() => {
+      console.log('updated');
+    });
+  }
 }

@@ -23,6 +23,7 @@ export class NavBarComponent implements OnInit {
         case '/home':
         case '/':
         case '/projects':
+        case '/todos':
           this.currentGroup = 'overview';
           break;
         case '/sounds':

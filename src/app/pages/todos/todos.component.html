@@ -1,3 +1,9 @@
-<p>
-  todos works!
-</p>
+<ol class="todos-list">
+  <li *ngFor="let todo of todos">
+    {{todo.name}}
+  </li>
+</ol>
+<div class="create-todo-wrapper">
+  <input type="text" name="name" #name [(ngModel)]="currentTodo.name" >
+  <button (click)="saveTodo(currentTodo.name)" >Save Todo</button>
+</div>
