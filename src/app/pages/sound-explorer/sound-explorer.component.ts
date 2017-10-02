@@ -1,4 +1,4 @@
-import { SpotifyService } from './../../services/spotify.service';
+import { SpotifyDataService } from './../../services/spotify-data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SoundExplorerComponent implements OnInit {
 
-  constructor(private spotifyService: SpotifyService) { }
+  constructor(private spotifyService: SpotifyDataService) { }
 
   ngOnInit() {
     this.spotifyService.authorize();

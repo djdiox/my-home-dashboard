@@ -1,3 +1,4 @@
+
 /**
  * My Home Dashboard App Module
  * 
@@ -5,22 +6,25 @@
  */
 
 /**
+ * Core Libraries and more
+ */
+/**
  * Angular Core Component Imports
  */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 /**
  * Additional Library Imports
  */
 // import { DragulaModule } from 'ng2-dragula'; //TO BE DONE
+import {SpotifyService} from 'angular2-spotify/angular2-spotify';
 
 /**
  * Project based imports
  */
-
 /**
  * Components
  */
@@ -36,7 +40,8 @@ import { TodosComponent } from './pages/todos/todos.component';
  */
 import { TodosService } from './services/todos.service';
 import { AuthService } from './services/auth.service';
-import { SpotifyService } from './services/spotify.service';
+import { SpotifyDataService } from './services/spotify-data.service';
+
 /**
  * Pipes
  */
@@ -89,7 +94,8 @@ const appRoutes: Routes = [
   providers: [
     TodosService,
     AuthService,
-    SpotifyService
+    SpotifyService,
+    SpotifyDataService
   ],
   bootstrap: [AppComponent]
 })
