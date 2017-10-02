@@ -35,6 +35,11 @@ import { TodosComponent } from './pages/todos/todos.component';
  * Services
  */
 import { TodosService } from './services/todos.service';
+import { AuthService } from './services/auth.service';
+import { SpotifyService } from './services/spotify.service';
+/**
+ * Pipes
+ */
 import { FilterPipe } from './pipes/filter.pipe';
 
 const appRoutes: Routes = [
@@ -82,7 +87,9 @@ const appRoutes: Routes = [
     FormsModule
   ],
   providers: [
-    TodosService
+    TodosService,
+    AuthService,
+    SpotifyService
   ],
   bootstrap: [AppComponent]
 })
